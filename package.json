@@ -1,5 +1,5 @@
 {
-  "name": "reveal-skel",
+  "name": "cmpt231-16fa-lec4",
   "version": "0.4.0",
   "private": true,
   "devDependencies": {
@@ -23,11 +23,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:sermons/reveal-skel.git"
+    "url": "git@github.com:cmpt231-16fa/lec4.git"
   },
   "info": {
-    "title": "Reveal Skel",
-    "disp_url": "reveal-skel.seanho.com"
+    "title": "Lecture 4, CMPT231",
+    "disp_url": "cmpt231.seanho.com/lec4"
   },
   "git": {
     "name": "Sean Ho",
