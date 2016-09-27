@@ -66,3 +66,25 @@
 ---
 ## Counting sort
 + **Assume**: values are **integers** in *{0, ..., k}*
++ **Out-of-place** sort:
+  + **Census** array (size *k*) tallies a *histogram*
+  + Items *copied* into **output** array
++ **Stable**: preserves order of duplicates
++ **Complexity**: *&Theta;(n+k)* (watch out if *k* gets too big!)
+
+```
+def counting_sort(A, n, k):
+  out[ 1 .. n ]         # new output array
+  census[ 0 .. k ]      # new array for census
+  for j in 1 .. n:      # take census
+    census[ A[ j ] ]++
+  for i in 1 .. k:      # cumulative sums
+    census[ i ] += census[ i-1 ]
+  for j in n .. 1:      # copy (in reverse)
+    out[ census[ A[ j ] ] ] = A[ j ]
+    census[ A[ j ] ]--
+```
+
+---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" class="empty" -->
+
