@@ -1,6 +1,23 @@
 {
   "name": "@cmpt231-16fa/lec4",
-  "version": "0.4.0",
+  "version": "0.7.0",
+  "repository": "cmpt231-16fa/lec4",
+  "description": "Lecture 4 CMPT231",
+  "keywords": ["slides", "algorithms"],
+  "author": "Sean Ho <seanho@seanho.com> (http://seanho.com)",
+  "config": {
+    "pretty_url": "cmpt231.seanho.com/lec4",
+    "cname": "",
+    "multiplex": {
+      "url": "https://mp-seanho00.rhcloud.com:8443/",
+      "id": "22bc761ffc97809b"
+    },
+    "git": {
+      "name": "Sean Ho",
+      "email": "travis@seanho.com"
+    }
+  },
+  "license": "CC-BY-SA-4.0",
   "private": true,
   "devDependencies": {
     "bower": "^1.7.9",
@@ -13,25 +30,13 @@
     "grunt-bower": "^0.21.2",
     "grunt-exec": "^1.0.0",
     "grunt-build-control": "^0.7.1",
-    "phantom": "^2.1.21",
     "grunt-coffeelint": "^0.0.16",
-    "coffeelint": "^1.15.7"
+    "coffeelint": "^1.15.7",
+    "phantom": "^2.1.21"
   },
   "engines": {
     "node": ">=0.10.0",
     "npm": ">=1.3.7"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:cmpt231-16fa/lec4.git"
-  },
-  "info": {
-    "title": "Lecture 4, CMPT231",
-    "disp_url": "cmpt231.seanho.com/lec4"
-  },
-  "git": {
-    "name": "Sean Ho",
-    "email": "travis@seanho.com"
   },
   "scripts": {
     "test": "grunt test",

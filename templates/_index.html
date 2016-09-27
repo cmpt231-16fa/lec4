@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title><%= pkg.info.title %></title><!-- CUSTOM -->
+    <title><%= pkg.description %></title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
@@ -43,8 +43,9 @@
           <% } %>
         <% }); %>
 
-        <div id="footer"><%= pkg.info.disp_url %>
-          <a href="<%= pkg.repository.url.replace(new RegExp('^git@'), 'https://').replace('.com:', '.com/').replace(new RegExp('\.git$'), '') %>"><img src="static/img/GitHub-Mark-Light-32px.png" style="height:1em" /></a>
+        <div id="footer"><%= pkg.config.pretty_url %>
+          <a href="https://github.com/<%= pkg.repository %>"><img src="static/img/GitHub-Mark-Light-32px.png" style="height:1em" /></a>
+          <a href="static/<%= config.shortname %>.pdf">(pdf)</a>
         </div>
       </div>
     </div>
@@ -69,8 +70,8 @@
         },
 
         multiplex: {
-          url: 'https://mp-seanho00.rhcloud.com:8443/',
-          id: '22bc761ffc97809b',	// secret: 45ba034647cea150
+          url: '<%= pkg.config.multiplex.url %>',
+          id : '<%= pkg.config.multiplex.id  %>',
           secret: Reveal.getQueryHash().s || null
         },
 
