@@ -55,12 +55,13 @@
 + Use **assumptions** on input: e.g., known *range*
   + or known *distribution* of values
 + For real-world arrays, *&Theta;(n)* and *&Theta;(n lg n)* are very similar
-  + Up to \`n=10^6\`, *lg n &lt; 21*, a smallish factor
-  + A fast *n lg n* sort like **Quicksort** may have smaller *constants*
-    than a linear-time sort
+  + Up to *n* = \`10^6\`, *lg n &lt; 21*, a smallish factor
+  + A fast *n lg n* sort like **Quicksort** may have <br/>
+    smaller *constants* than a linear-time sort
 + **Hybrid** algorithms (e.g., *#7.4-5*):
   + One pass with **Quicksort**, stop when length &lt; *c*
-  + Second pass with **insertion** sort, on "nearly sorted" input
+  + Second pass with **insertion** sort
+    + Few shuffles when input is "nearly sorted"
 + **Recursion** is expensive (function calls)
 
 ---
@@ -74,13 +75,13 @@
 
 ```
 def counting_sort(A, n, k):
-  out[ 1 .. n ]         # new output array
-  census[ 0 .. k ]      # new array for census
-  for j in 1 .. n:      # take census
+  out[ 1 .. n ]                 # new output array
+  census[ 0 .. k ]              # new array for census
+  for j in 1 .. n:              # take census
     census[ A[ j ] ]++
-  for i in 1 .. k:      # cumulative sums
+  for i in 1 .. k:              # cumulative sums
     census[ i ] += census[ i-1 ]
-  for j in n .. 1:      # copy (in reverse)
+  for j in n .. 1:              # copy (in reverse)
     out[ census[ A[ j ] ] ] = A[ j ]
     census[ A[ j ] ]--
 ```
