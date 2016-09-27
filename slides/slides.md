@@ -87,5 +87,11 @@ def counting_sort(A, n, k):
 ```
 
 ---
+## Visualisations of sorting
+
+>>>
+TODO
+
+---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" class="empty" -->
 
