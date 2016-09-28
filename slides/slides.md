@@ -115,11 +115,12 @@ def radix_sort( A, n, d ):
 ---
 ## Radix sort: complexity
 + **Input**: *n* items of *d* digits, each with *k* values (e.g., k=*10*)
-+ With **counting** sort, we have *d* iterations, each *&Theta;(n+k)*
++ e.g., using **counting** sort as the stable sort:
+  + *d* iterations, each *&Theta;(n+k)*
   + So total complexity is *&Theta;(d(n+k))*
-+ If items are *b*-bits long, we can encode them using *r*-bit digits
-  + Choose *r* to optimise run time: **balance** *d* vs *n+k*
-  + \` d = b/r \` and \` k = 2^r-1 \`
++ **Digits** need not be base *k=10*!
++ *b*-bit items can be **split** into *r*-bit digits:
+  + Then \` d = b/r \` and \` k = 2^r-1 \`
   + e.g., *b*=32-bit items in *r*=8-bit digits &rArr; *d*=4, *k*=255
 + **Choose** r = *lg n*:
   \` Theta((b/r)(n+2^r)) \`
