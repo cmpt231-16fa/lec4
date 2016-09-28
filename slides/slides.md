@@ -87,6 +87,73 @@ def counting_sort(A, n, k):
 ```
 
 ---
+## Radix sort
++ (How **IBM** made its fortune! Punch cards, ca 1900)
++ **Assume**: values have at most *d* digits
++ Sort one **digit** at a time, **least**-significant first (**why**?)
++ Use a **stable** sort, e.g., **counting** sort (**why**?)
+
+<div class="imgbox"><div data-markdown>
+
+```
+def radix_sort( A, n, d ):
+  for i in 1 .. d:
+    stable_sort( A on digit i )
+```
+
+</div><div data-markdown>
+
+| 3 | 7 | 4 | 5 |
+|---|---|---|---|
+| 2 | 9 | 1 | 3 |
+| 1 | 0 | 1 | 6 |
+| 2 | 0 | 1 | 6 |
+| - | 9 | 1 | 3 |
+
+</div></div>
+
+---
+## Radix sort: complexity
++ **Input**: *n* items of *d* digits, each with *k* values (e.g., k=*10*)
++ With **counting** sort, we have *d* iterations, each *&Theta;(n+k)*
+  + So total complexity is *&Theta;(d(n+k))*
++ If items are *b*-bits long, we can encode them using *r*-bit digits
+  + Choose *r* to optimise run time: **balance** *d* vs *n+k*
+  + \` d = b/r \` and \` k = 2^r-1 \`
+  + e.g., *b*=32-bit items in *r*=8-bit digits &rArr; *d*=4, *k*=255
++ **Choose** r = *lg n*:
+  \` Theta((b/r)(n+2^r)) \`
+  \` = Theta((b/(text(lg)n))(2n)) \`
+  \` = Theta((bn)/(text(lg)n)) \`
++ e.g., to sort *n*=\`2^16\` integers of *b*=64-bits, use *r*=16-bit digits
+
+---
+## Outline
+
+---
+## Bucket sort
++ **Assume**: values **uniformly** distributed over *[0,1)*
++ Divide range *[0,1)* into *n* equal-size **buckets**
+  + Each bucket could be **array** or **linked list**
++ **Distribute** input into buckets *(&Theta;(n))*
++ **Sort** each (small) bucket (e.g., with **insertion** sort)
++ **Pull** from each bucket in order *(&Theta;(n))*
+
+>>>
+TODO: viz of buckets?
+
+---
+## Bucket sort: complexity
++ Let \`n\_i\` be number of **items** in the *i*-th bucket
++ **Intuition**: uniform distribution &rArr; \`n\_i ~~ 1\`
+  + So each **intra-bucket** sort should be roughly *O(1)*
++ To be precise, each intra-bucket sort takes \`O(n\_i^2)\`
++ **Expected** time of bucket sort:
+  \` E(T(n)) = E(Theta(n) + sum\_(i=0)^(n-1) O(n\_i^2)) \`
+  \` = Theta(n) = O(sum\_(i=0)^(n-1) E(n\_i^2)) \`
+
+
+---
 ## Visualisations of sorting
 
 >>>
