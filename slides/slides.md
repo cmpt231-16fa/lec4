@@ -194,39 +194,138 @@ TODO: viz of buckets?
 
 ---
 ## Hashing
++ Hash **function** \`h(k): U -> bbb Z\_m\` (i.e., *{0, ..., m-1}*)
+  maps from **universe** *U* of possible keys
+  to a set of *m* **buckets**
+  + Use *h(k)* as **key** instead of *k*
++ Hash **collision**: two keys hash to **same** bucket:
+  \`h(k\_i)=h(k\_j)\`
+  + Want hash function to **minimise** collisions
+  + Collision **handling**: e.g., chain via **linked list**
++ Similar to **bucket sort**, but
+  + Hash function maps **distribution** of keys in *U*
+    to **uniform** distrib on buckets
 
 ---
 ## Hash table operations
++ Assuming collision handling via **linked lists**:
++ `insert(T, k, x)`: insert *x* at **head** of list at bucket *h(k)*
+  + *O(1)* complexity; assumes *x* **not already** in list
++ `search(T, k)`: **linear search** through bucket *h(k)*
+  + \`O(n\_(h(k)))\`, where \`n\_(h(k))\` = **num items** in bucket *h(k)*
++ `delete(T, x)`: if arg is a **pointer** directly to item, then *O(1)*
+  + if arg is a **key**, then need to **search** for it first:
+  \`O(n\_(h(k)))\`
 
 ---
 ## Load factor
++ **Efficiency** of `search()` depends on how **full** buckets are: \`n\_(h(k))\`
++ **Load factor** *&alpha;* = *n*/*m*:
+  + *n* = total number of **items** stored in hash table
+  + *m* = number of **buckets**
+  + *&alpha;* is **average** num items per bucket: \`E[n\_(h(k))]\`
++ **Unsuccessful** search takes average *&Theta;(1+&alpha;)*
+  + Computing the **hash function** takes *&Theta(1)*
+  + **Linear search** goes through entire bucket
+  + Expected **length** of bucket's linked list is *&alpha;*
++ **Successful** search is also *&Theta;(1+&alpha;)*:
 
 ---
-## Complexity of `search()`
+## Hash table search: &Theta;(1+&alpha;)
++ Num **items** searched = **position** of *x* in linked list at *h(k)*
+  + = Number of **collisions** after *x* was inserted
++ Use an **indicator**: \`X\_(ij)\` = 1 iff \`h(k\_i)=h(k\_j)\`
+  + P(*i* and *j* collide) = \`E[X\_(ij)] = 1/m\`
++ Expected num **items** searched:
+  \` E[ (1/n) sum\_i (text(num items)) ] \`
+  \` = E[ (1/n) sum\_i (1 + sum\_j X\_(ij)) ] \`
+  \` = (1/n) sum\_i (1 + sum\_j E[X\_(ij)]) \`
+  \` = (1/n) sum\_i (1 + sum\_j (1/m)) \`
+  \` = 1 + (1/n)sum\_i sum\_j (1/m) \`
+  \` = 1 + (1/(nm))((n(n-1))/2) \`
+  \` = 1 + alpha/2 - alpha/(2n) \`
 
 ---
 ## Outline
 
 ---
 ## Hash functions
++ Assume \`U=bbb N\` (i.e., convert keys to **natural numbers**)
++ Want *h(k)* **uniformly** distributed on \`bbb Z\_m\`
+  + But distribution of keys *k* is **unknown**
+  + Also, keys \`k\_i\` and \`k\_j\` might not be **independent**
++ **Division** hash: h(k) = *k mod m*
+  + **Fast**, but if \`m=2^p\` (i.e., a power of 2), <br/>
+    this is just selecting the *p* **least-significant** bits
+  + If *k* is a **string** using a radix-\`2^p\` representation,
+    then **permuting** the string gives **same** hash *(#11.3-3)*
+  + So need to choose *m* **prime** and not too close to a power of 2
 
 ---
 ## Multiplication hash
++ h(k) = \`|\_ m(kA mod 1) \_|\`, where 0 &lt; *A* &lt; 1 is a chosen **constant**
++ Fast **implementation** using \`m=2^p\`:
+  + Let *w* be the native machine **word size** (num bits)
+  + **Choose** a *w*-bit integer *s*, 0 &lt; s &lt; \`2^w\`
+    + Let *A* = \`s/2^w\`
+  + **Multiply** *s*&lowast;*k*: product has *2w* bits in two *words*
+    \`r\_0, r\_1\`
+  + **Select** the *p* most-significant bits of lower word \`r\_0\`
+
+>>>
+TODO: figure
 
 ---
 ## Universal hashing
++ For any **fixed** choice of hash function,
+  can always find **bad input** resulting in lots of hash **collisions**
++ Why not **randomly** select from a **pool** *H* of hash functions?
++ Want pool to have **universal hash** property:
+  + For any two keys *j* &ne; *k*, the **number** of hash functions
+    in *H* that cause a **collision** *h(j)* = *h(k)* is &le; *|H|/m*
+  + i.e., P( *h(j)* = *h(k)* ) &le; *1/m*
++ Then expected **bucket size** is still *O(1+&alpha;)*
+  + So average complexity of **search** is still *O(1)*
 
 ---
 ## Outline
 
 ---
 ## Open addressing
++ Another method of **collision** handling:
+  + Store keys **directly** in table, no linked lists
++ Hash **function** \`h: U xx bbb Z\_m -> bbb Z\_m\`
+  + A **probe sequence** is *h(k,0)*, *h(k,1)*, *h(k,2)*, ...
++ To **insert** an item in table, first try *h(k,0)*
+  + If already **occupied**, try next in sequence: *h(k,1)*
+  + Will eventually try **all** slots (full **coverage**)
+    if probe sequence is a **permutation** of \`bbb Z\_m\`
++ **Search** is similar: check if found desired **key**
++ Hash table will still **overflow** if *n* &gt; *m*
 
 ---
 ## Probe sequencing
++ Choose a hash function that gives us **uniform hashing**:
+  + Each **permutation** of \`bbb Z\_m\` equally likely to be
+    the probe sequence for a given key
++ **Linear** probing: h(k,i) = *h(k) + i*
+  + Try *h(k)*, then *h(k)+1*, etc. (modulo *m*)
+  + But: long **runs** get **longer** (more likely to hit)
++ **Quadratic** probing: h(k,i) = \`h(k) + c\_1 i + c\_2 i^2\`
+  + Must choose \`c\_1, c\_2\` to get full **coverage**
+  + But: a **collision** on initial *h(k)* means a full **sequence collision**
 
 ---
 ## Double hashing
++ Use **two** hash functions: h(k, i) = \`h\_1(k) + i h\_2(k)\`
+  + Try \`h\_1(k)\` **first**, then use \`h\_2\` to **jump** around
++ To get full **coverage**, choose \`h\_2(k)\` and *m* **relatively prime**
+  + i.e., no common **factors** other than 1
+  + e.g., let m=\`2^p\` and ensure \`h\_2(k)\` always **odd**
+  + e.g., let m be **prime**, and ensure 1 &lt; \`h\_2(k)\` &lt; *m*
++ Each combination of \`h\_1(k)\` and \`h\_2(k)\` yields
+  a **different** probe sequence:
+  + Total **number** of sequences is \`Theta(n^2)\`
 
 ---
 ## Outline
