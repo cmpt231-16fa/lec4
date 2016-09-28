@@ -149,9 +149,87 @@ TODO: viz of buckets?
   + So each **intra-bucket** sort should be roughly *O(1)*
 + To be precise, each intra-bucket sort takes \`O(n\_i^2)\`
 + **Expected** time of bucket sort:
-  \` E(T(n)) = E(Theta(n) + sum\_(i=0)^(n-1) O(n\_i^2)) \`
-  \` = Theta(n) = O(sum\_(i=0)^(n-1) E(n\_i^2)) \`
+  \` E[T(n)] = E[Theta(n) + sum\_(i=0)^(n-1) O(n\_i^2)] \`
+  \` = Theta(n) + O(sum\_(i=0)^(n-1) E[n\_i^2)] \`
+  \` = Theta(n) + O(sum\_(i=0)^(n-1) (2 - 1/n)) \` *(lemma)*
+  \` = Theta(n) + O(2n-1)\` = *O(n)*
 
+---
+## Lemma: \`E[n\_i^2] = 2-1/n\`
++ Use an **indicator var** \`X\_(ij)\` = 1 iff *j*-th **item**
+  falls in *i*-th **bucket**
+  + Hence the *i*-th bucket has \`n\_i=sum\_(j=0)^(n-1) X\_(ij)\` items
++ So \` E[n\_i^2] = E[ (sum\_(j=0)^(n-1) X\_(ij))^2 ] \`
+  \` = sum\_(j=0)^(n-1) E[ X\_(ij)^2 ] + 2sum\_(j=0)^(n-1) sum\_(k=0)^(j-1) E[ X\_(ij)X\_(ik) ] \`
++ For **first** term: \`E[X\_(ij)^2] = 0^2 P(X\_(ij)=0) + 1^2 P(X\_(ij)=1) \`
+  \` = 1^2 (1/n) = 1/n \`
++ For **second** term, note items *j* &ne; *k* are **independent**:
+  \` E[ X\_(ij)X\_(ik) ] = E[X\_(ij)]E[X\_(ik)] \`
+  \` = (1/n)(1/n) = 1/n^2 \`
+
+---
+## Lemma, continued
++ So \`E[n\_i^2] \`
+  \` = sum\_(j=0)^(n-1) E[ X\_(ij)^2 ] + 2sum\_(j=0)^(n-1) sum\_(k=0)^(j-1) E[ X\_(ij)X\_(ik) ] \`
+  \` = sum\_(j=0)^(n-1) (1/n) + 2sum\_(j=0)^(n-1) sum\_(k=0)^(j-1) (1/n^2) \`
+  \` = (n)(1/n) + 2((n(n-1))/2)(1/n^2) \`
+  \` = 2 - 1/n \`
++ This proves the **lemma**, which proves **bucket sort** is *&Theta(n)*
++ **Assumptions**: input values **uniformly** distributed
+
+---
+## Outline
+
+---
+## Hash tables
++ **Dictionary** of *key*-*value* pairs, with this **interface**:
+  + `insert(T, k, x)`: **add** item *x* with key *k*
+  + `search(T, k)`: **find** an item with key *k*
+  + `delete(T, x)`: **remove** specific item *x*
++ Better than regular array (**direct addressing**) when:
+  + **Range** of possible keys too huge to allocate
+  + Actual keys are only **sparse** subset of possible keys
++ e.g., only have items at keys *0*, *2*, *40201300*:
+  + Direct addressing would allocate 40,201,300 entries!
+
+---
+## Hashing
+
+---
+## Hash table operations
+
+---
+## Load factor
+
+---
+## Complexity of `search()`
+
+---
+## Outline
+
+---
+## Hash functions
+
+---
+## Multiplication hash
+
+---
+## Universal hashing
+
+---
+## Outline
+
+---
+## Open addressing
+
+---
+## Probe sequencing
+
+---
+## Double hashing
+
+---
+## Outline
 
 ---
 ## Visualisations of sorting
