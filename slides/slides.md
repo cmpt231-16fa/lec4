@@ -149,22 +149,25 @@ TODO: viz of buckets?
 ---
 ## Bucket sort: complexity
 + Let \`n\_i\` be number of **items** in the *i*-th bucket
+  + Sorting a bucket with **insertion** sort takes \`O(n\_i^2)\`
 + **Intuition**: uniform distribution &rArr; \`n\_i ~~ 1\`
-  + So each **intra-bucket** sort should be roughly *O(1)*
-+ To be precise, each intra-bucket sort takes \`O(n\_i^2)\`
 + **Expected** time of bucket sort:
-  \` E[T(n)] = E[Theta(n) + sum\_(i=0)^(n-1) O(n\_i^2)] \`
-  \` = Theta(n) + O(sum\_(i=0)^(n-1) E[n\_i^2]) \`
-  \` = Theta(n) + O(sum\_(i=0)^(n-1) (2 - 1/n)) \` *(lemma)*
+  \` E[T(n)] = E[Theta(n) + sum O(n\_i^2)] \`
+  \` = Theta(n) + O(sum E[n\_i^2]) \`
+  \` = Theta(n) + O(sum (2 - 1/n)) \` *(lemma)*
   \` = Theta(n) + O(2n-1)\` = *O(n)*
 
 ---
-## Lemma: \`E[n\_i^2] = 2-1/n\`
+## Lemma: \`E[n\_i^2]\` = 2 - 1/n
 + Use an **indicator var** \`X\_(ij)\` = 1 iff *j*-th **item**
   falls in *i*-th **bucket**
   + Hence the *i*-th bucket has \`n\_i=sum\_(j=0)^(n-1) X\_(ij)\` items
 + So \` E[n\_i^2] = E[ (sum\_(j=0)^(n-1) X\_(ij))^2 ] \`
   \` = sum\_(j=0)^(n-1) E[ X\_(ij)^2 ] + 2sum\_(j=0)^(n-1) sum\_(k=0)^(j-1) E[ X\_(ij)X\_(ik) ] \`
+
+---
+## Lemma, continued
++ \` E[n\_i^2] = sum\_(j=0)^(n-1) E[ X\_(ij)^2 ] + 2sum\_(j=0)^(n-1) sum\_(k=0)^(j-1) E[ X\_(ij)X\_(ik) ] \`
 + For **first** term: \`E[X\_(ij)^2] = 0^2 P(X\_(ij)=0) + 1^2 P(X\_(ij)=1) \`
   \` = 1^2 (1/n) = 1/n \`
 + For **second** term, note items *j* &ne; *k* are **independent**:
@@ -178,7 +181,7 @@ TODO: viz of buckets?
   \` = sum\_(j=0)^(n-1) (1/n) + 2sum\_(j=0)^(n-1) sum\_(k=0)^(j-1) (1/n^2) \`
   \` = (n)(1/n) + 2((n(n-1))/2)(1/n^2) \`
   \` = 2 - 1/n \`
-+ This proves the **lemma**, which proves **bucket sort** is *&Theta(n)*
++ This proves the **lemma**, proving **bucket sort** is *&Theta;(n)*
 + **Assumptions**: input values **uniformly** distributed
 
 ---
