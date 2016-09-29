@@ -154,7 +154,7 @@ TODO: viz of buckets?
 + To be precise, each intra-bucket sort takes \`O(n\_i^2)\`
 + **Expected** time of bucket sort:
   \` E[T(n)] = E[Theta(n) + sum\_(i=0)^(n-1) O(n\_i^2)] \`
-  \` = Theta(n) + O(sum\_(i=0)^(n-1) E[n\_i^2)] \`
+  \` = Theta(n) + O(sum\_(i=0)^(n-1) E[n\_i^2]) \`
   \` = Theta(n) + O(sum\_(i=0)^(n-1) (2 - 1/n)) \` *(lemma)*
   \` = Theta(n) + O(2n-1)\` = *O(n)*
 
