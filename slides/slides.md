@@ -119,6 +119,9 @@ def radix_sort( A, n, d ):
   + *d* iterations, each *&Theta;(n+k)*
   + So total complexity is *&Theta;(d(n+k))*
 + **Digits** need not be base *k=10*!
+
+---
+## Radix: choosing digit size
 + *b*-bit items can be **split** into *r*-bit digits:
   + Then \` d = b/r \` and \` k = 2^r-1 \`
   + e.g., *b*=32-bit items in *r*=8-bit digits &rArr; *d*=4, *k*=255
