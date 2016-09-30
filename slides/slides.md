@@ -48,7 +48,17 @@
   + = &Omega;( *n lg n* ) (by **Stirling**)
 
 ---
-## Outline
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
+## Outline for today
++ Proving all comparison sorts are *&Omega;(n lg n)*
++ Linear-time non-comparison sorts:
+  + Counting sort
+  + Radix sort and analysis
+  + Bucket sort and probabilistic proof
++ Hash tables:
+  + Collision handling by chaining
+  + Hash functions and universal hashing
+  + Collision handling by open addressing
 
 ---
 ## Linear-time sorts
@@ -132,7 +142,17 @@ def radix_sort( A, n, d ):
 + e.g., to sort *n*=\`2^16\` integers of *b*=64-bits, use *r*=16-bit digits
 
 ---
-## Outline
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
+## Outline for today
++ Proving all comparison sorts are *&Omega;(n lg n)*
++ Linear-time non-comparison sorts:
+  + Counting sort
+  + Radix sort and analysis
+  + Bucket sort and probabilistic proof
++ Hash tables:
+  + Collision handling by chaining
+  + Hash functions and universal hashing
+  + Collision handling by open addressing
 
 ---
 ## Bucket sort
@@ -193,7 +213,17 @@ TODO: viz of buckets?
 TODO
 
 ---
-## Outline
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
+## Outline for today
++ Proving all comparison sorts are *&Omega;(n lg n)*
++ Linear-time non-comparison sorts:
+  + Counting sort
+  + Radix sort and analysis
+  + Bucket sort and probabilistic proof
++ Hash tables:
+  + Collision handling by chaining
+  + Hash functions and universal hashing
+  + Collision handling by open addressing
 
 ---
 ## Hash tables
@@ -253,20 +283,30 @@ TODO
   + = Number of **collisions** after *x* was inserted
 + Use an **indicator**: \`X\_(ij)\` = 1 iff \`h(k\_i)=h(k\_j)\`
   + P(*i* and *j* collide) = \`E[X\_(ij)]\` = *1/m*
-
----
-## Successful search is &Theta;(1+&alpha;)
 + Expected num **items** searched:
   \` E[ (1/n) sum\_i (text(num items)) ] \`
   \` = E[ (1/n) sum\_i (1 + sum\_j X\_(ij)) ] \`
-  \` = (1/n) sum\_i (1 + sum\_j E[X\_(ij)]) \`
-  \` = (1/n) sum\_i (1 + sum\_j (1/m)) \`
-  \` = 1 + (1/n)sum\_i sum\_j (1/m) \`
-  \` = 1 + (1/(nm))((n(n-1))/2) \`
-  \` = 1 + alpha/2 - alpha/(2n) \`
 
 ---
-## Outline
+## Successful search is &Theta;(1+&alpha;)
+\` = (1/n) sum\_i (1 + sum\_j E[X\_(ij)]) \`
+\` = (1/n) sum\_i (1 + sum\_j (1/m)) \`
+\` = 1 + (1/n)sum\_i sum\_j (1/m) \`
+\` = 1 + (1/(nm))((n(n-1))/2) \`
+\` = 1 + alpha/2 - alpha/(2n) \`
+
+---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
+## Outline for today
++ Proving all comparison sorts are *&Omega;(n lg n)*
++ Linear-time non-comparison sorts:
+  + Counting sort
+  + Radix sort and analysis
+  + Bucket sort and probabilistic proof
++ Hash tables:
+  + Collision handling by chaining
+  + Hash functions and universal hashing
+  + Collision handling by open addressing
 
 ---
 ## Hash functions
@@ -284,8 +324,9 @@ TODO
 
 ---
 ## Multiplication hash
-+ h(k) = \`|_ m(kA mod 1) _|\`, where 0 &lt; *A* &lt; 1 is a chosen **constant**
-  + **Multiply** *k*&lowast;*A* &rarr; take **fractional** part &rarr; **multiply** by *m* &rarr; **round** down
++ h(k) = \` |\_ m(kA mod 1) \_| \` (choose **constant** 0 &lt; *A* &lt; 1)
+  + **Multiply** *k*&lowast;*A* &rarr; take **fractional** part
+  + &rarr; **multiply** by *m* &rarr; **round** down
 + Fast **implementation** using \`m=2^p\`:
   + Let *w* be the native machine **word size** (num bits)
   + **Choose** a *w*-bit integer *s* (0 &lt; s &lt; \`2^w\`)
@@ -310,7 +351,17 @@ TODO: figure
   + So average complexity of **search** is still *O(1)*
 
 ---
-## Outline
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
+## Outline for today
++ Proving all comparison sorts are *&Omega;(n lg n)*
++ Linear-time non-comparison sorts:
+  + Counting sort
+  + Radix sort and analysis
+  + Bucket sort and probabilistic proof
++ Hash tables:
+  + Collision handling by chaining
+  + Hash functions and universal hashing
+  + Collision handling by open addressing
 
 ---
 ## Open addressing
@@ -350,7 +401,17 @@ TODO: figure
   + Total **number** of sequences is \`Theta(n^2)\`
 
 ---
-## Outline
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
+## Outline for today
++ Proving all comparison sorts are *&Omega;(n lg n)*
++ Linear-time non-comparison sorts:
+  + Counting sort
+  + Radix sort and analysis
+  + Bucket sort and probabilistic proof
++ Hash tables:
+  + Collision handling by chaining
+  + Hash functions and universal hashing
+  + Collision handling by open addressing
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" class="empty" -->
