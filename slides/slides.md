@@ -189,6 +189,9 @@ TODO: viz of buckets?
 ---
 ## Visualisations of sorting
 
+>>>
+TODO
+
 ---
 ## Outline
 
@@ -348,9 +351,6 @@ TODO: figure
 
 ---
 ## Outline
-
->>>
-TODO
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" class="empty" -->
