@@ -51,9 +51,9 @@
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
 ## Outline for today
 + Proving all comparison sorts are *&Omega;(n lg n)*
-+ Linear-time non-comparison sorts:
-  + Counting sort
-  + Radix sort and analysis
++ **Linear-time non-comparison sorts:**
+  + **Counting sort**
+  + **Radix sort and analysis**
   + Bucket sort and probabilistic proof
 + Hash tables:
   + Collision handling by chaining
@@ -122,6 +122,9 @@ def radix_sort( A, n, d ):
 
 </div></div>
 
+>>>
+TODO: fix markdown
+
 ---
 ## Radix sort: complexity
 + **Input**: *n* items of *d* digits, each with *k* values (e.g., k=*10*)
@@ -134,12 +137,12 @@ def radix_sort( A, n, d ):
 ## Radix: choosing digit size
 + *b*-bit items can be **split** into *r*-bit digits:
   + Then \` d = b/r \` and \` k = 2^r-1 \`
-  + e.g., *b*=32-bit items in *r*=8-bit digits &rArr; *d*=4, *k*=255
-+ **Choose** r = *lg n*:
+  + e.g., *b* = 32-bit items in *r* = 8-bit digits &rArr; *d* = 4, *k* = 255
++ **Choose** r = *lg n*: then
   \` Theta((b/r)(n+2^r)) \`
   \` = Theta((b/(text(lg)n))(2n)) \`
   \` = Theta((bn)/(text(lg)n)) \`
-+ e.g., to sort *n*=\`2^16\` integers of *b*=64-bits, use *r*=16-bit digits
++ e.g., to sort *n* = \`2^16\` integers of *b* = 64-bits, use *r* = 16-bit digits
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
@@ -148,7 +151,7 @@ def radix_sort( A, n, d ):
 + Linear-time non-comparison sorts:
   + Counting sort
   + Radix sort and analysis
-  + Bucket sort and probabilistic proof
+  + **Bucket sort and probabilistic proof**
 + Hash tables:
   + Collision handling by chaining
   + Hash functions and universal hashing
@@ -220,8 +223,8 @@ TODO
   + Counting sort
   + Radix sort and analysis
   + Bucket sort and probabilistic proof
-+ Hash tables:
-  + Collision handling by chaining
++ **Hash tables:**
+  + **Collision handling by chaining**
   + Hash functions and universal hashing
   + Collision handling by open addressing
 
@@ -255,7 +258,8 @@ TODO
 ---
 ## Hash table operations
 + Assuming collision handling via **linked lists**:
-+ `insert(T, k, x)`: insert *x* at **head** of list at bucket *h(k)*
++ `insert(T, k, x)`:
+  + insert *x* at **head** of list at bucket *h(k)*
   + *O(1)* complexity; assumes *x* **not already** in list
 + `search(T, k)`: **linear search** through bucket *h(k)*
   + \`O(n\_(h(k)))\`, where \`n\_(h(k))\` = **num items** in bucket *h(k)*
@@ -289,8 +293,8 @@ TODO
 
 ---
 ## Successful search is &Theta;(1+&alpha;)
-\` = (1/n) sum\_i (1 + sum\_j E[X\_(ij)]) \`
-\` = (1/n) sum\_i (1 + sum\_j (1/m)) \`
+\` = (1/n) sum\_i (1 + sum\_j E[X\_(ij)]) \` <br/>
+\` = (1/n) sum\_i (1 + sum\_j (1/m)) \` <br/>
 \` = 1 + (1/n)sum\_i sum\_j (1/m) \`
 \` = 1 + (1/(nm))((n(n-1))/2) \`
 \` = 1 + alpha/2 - alpha/(2n) \`
@@ -305,7 +309,7 @@ TODO
   + Bucket sort and probabilistic proof
 + Hash tables:
   + Collision handling by chaining
-  + Hash functions and universal hashing
+  + **Hash functions and universal hashing**
   + Collision handling by open addressing
 
 ---
@@ -361,7 +365,7 @@ TODO: figure
 + Hash tables:
   + Collision handling by chaining
   + Hash functions and universal hashing
-  + Collision handling by open addressing
+  + **Collision handling by open addressing**
 
 ---
 ## Open addressing
