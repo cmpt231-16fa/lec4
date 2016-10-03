@@ -123,7 +123,7 @@ def radix_sort( A, n, d ):
 </div></div>
 
 >>>
-TODO: fix markdown
+
 
 ---
 ## Radix sort: complexity
@@ -159,6 +159,9 @@ TODO: fix markdown
 
 ---
 ## Bucket sort
+
+<div class="imgbox"><div data-markdown>
+
 + **Assume**: values **uniformly** distributed over *[0,1)*
 + Divide range *[0,1)* into *n* equal-size **buckets**
   + Each bucket could be **array** or **linked list**
@@ -166,8 +169,11 @@ TODO: fix markdown
 + **Sort** each (small) bucket (e.g., with **insertion** sort)
 + **Pull** from each bucket in order: *&Theta;(n)*
 
->>>
-TODO: viz of buckets?
+</div><div data-markdown>
+
+![Bucket sort](static/img/Fig-8-4_bucket.png)
+
+</div></div>
 
 ---
 ## Bucket sort: complexity
