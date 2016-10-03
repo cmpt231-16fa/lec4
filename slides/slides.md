@@ -50,7 +50,7 @@
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
 ## Outline for today
-+ Proving all comparison sorts are *&Omega;(n lg n)*
++ Proving all comparison sorts are &Omega;(n lg n)
 + **Linear-time non-comparison sorts:**
   + **Counting sort**
   + **Radix sort and analysis**
@@ -407,15 +407,15 @@ TODO: figure
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
 ## Outline for today
-+ Proving all comparison sorts are *&Omega;(n lg n)*
-+ Linear-time non-comparison sorts:
-  + Counting sort
-  + Radix sort and analysis
-  + Bucket sort and probabilistic proof
-+ Hash tables:
-  + Collision handling by chaining
-  + Hash functions and universal hashing
-  + Collision handling by open addressing
++ Proving all **comparison** sorts are *&Omega;(n lg n)*
++ **Linear-time** non-comparison sorts:
+  + **Counting** sort
+  + **Radix** sort and analysis
+  + **Bucket** sort and probabilistic proof
++ **Hash tables**:
+  + Collision handling by **chaining**
+  + Hash **functions** and **universal** hashing
+  + Collision handling by **open addressing**
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" class="empty" -->
