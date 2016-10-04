@@ -5,7 +5,18 @@
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
-## Devotional
+## Psalm 90:10-12 (ESV)
+The **years of our life** are seventy, <br/>
+or even by reason of strength eighty; <br/>
+yet their span is but **toil** and **trouble**; <br/>
+they are soon gone, and we **fly away**.
+
+Who considers the power of your **anger**, <br/>
+and your **wrath** according to the **fear** of you?
+
+So teach us to **number our days** <br/>
+that we may get a **heart of wisdom**.
+
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
