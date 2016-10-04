@@ -160,14 +160,15 @@ def radix_sort( A, n, d ):
 ---
 ## Bucket sort
 
-<div class="imgbox"><div data-markdown>
-
 + **Assume**: values **uniformly** distributed over *[0,1)*
+
+<div class="imgbox"><div data-markdown style="flex: 2">
+
 + Divide range *[0,1)* into *n* equal-size **buckets**
   + Each bucket could be **array** or **linked list**
 + **Distribute** input into buckets: *&Theta;(n)*
 + **Sort** each (small) bucket (e.g., with **insertion** sort)
-+ **Pull** from each bucket in order: *&Theta;(n)*
++ **Pull** from each bucket in order: *&Theta;(n)*.
 
 </div><div data-markdown>
 
@@ -219,11 +220,15 @@ def radix_sort( A, n, d ):
 ## Visualisations of sorting
 
 + [The Sound of Sorting](http://panthema.net/2013/sound-of-sorting/) [(YouTube playlist)](https://www.youtube.com/watch?list=PLZh3kxyHrVp_AcOanN_jpuQbcMVdXbqei)
-+ [Visualgo](http://visualgo.net): interactive demos: sorting, binary heaps, hash tables, etc.
++ [Visualgo](http://visualgo.net): interactive demos:
+  + sorting, binary heaps, hash tables, etc.
 + Toptal: [Comparison of sort algorithms](https://www.toptal.com/developers/sorting-algorithms)
 + Mike Bostock's "Visualizing Algorithms":
-  [Fisher-Yates shuffle](https://bost.ocks.org/mike/algorithms/#shuffling),
-  [sorting](https://bost.ocks.org/mike/algorithms/#sorting)
+  + [Fisher-Yates shuffle](https://bost.ocks.org/mike/algorithms/#shuffling),
+    [sorting](https://bost.ocks.org/mike/algorithms/#sorting)
+
+>>>
+TODO: screen shot
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
