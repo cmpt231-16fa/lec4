@@ -163,12 +163,13 @@ def radix_sort( A, n, d ):
 + **Assume**: values **uniformly** distributed over *[0,1)*
 
 <div class="imgbox"><div data-markdown style="flex: 2">
-
-+ Divide range *[0,1)* into *n* equal-size **buckets**
-  + Each bucket could be **array** or **linked list**
-+ **Distribute** input into buckets: *&Theta;(n)*
-+ **Sort** each (small) bucket (e.g., with **insertion** sort)
-+ **Pull** from each bucket in order: *&Theta;(n)*.
+<ul>
+<li> Divide *[0,1)* into *n* equal **buckets** <ul>
+  <li> Use **array** or **linked list** </ul>
+<li> **Distribute** input into buckets: *&Theta;(n)*
+<li> **Sort** each bucket (e.g., **insertion** sort)
+<li> **Pull** from buckets in order: *&Theta;(n)*
+</ul>
 
 </div><div data-markdown>
 
@@ -219,7 +220,7 @@ def radix_sort( A, n, d ):
 ---
 ## Visualisations of sorting
 
-+ [The Sound of Sorting](http://panthema.net/2013/sound-of-sorting/) [(YouTube playlist)](https://www.youtube.com/watch?list=PLZh3kxyHrVp_AcOanN_jpuQbcMVdXbqei)
++ [The Sound of Sorting](http://panthema.net/2013/sound-of-sorting/) (YouTube [playlist](https://www.youtube.com/watch?list=PLZh3kxyHrVp_AcOanN_jpuQbcMVdXbqei))
 + [Visualgo](http://visualgo.net): interactive demos:
   + sorting, binary heaps, hash tables, etc.
 + Toptal: [Comparison of sort algorithms](https://www.toptal.com/developers/sorting-algorithms)
