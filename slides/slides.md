@@ -174,6 +174,8 @@ def radix_sort( A, n, d ):
 
 **Assume**: values **uniformly** distributed over *[0,1)*
 
+(For range *[a, b)*, use linear transform to *[0, 1)* )
+
 <div class="imgbox"><div data-markdown style="flex: 2">
 <ul>
 <li> Divide *[0,1)* into *n* equal **buckets** <ul>
