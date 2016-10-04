@@ -160,7 +160,7 @@ def radix_sort( A, n, d ):
 ---
 ## Radix: choosing digit size
 + *b*-bit items can be **split** into *r*-bit digits:
-  + Then \` d = b/r \` and \` k = 2^r-1 \`
+  + Then \` d = b/r \` digits, each with \` k = 2^r-1 \` values
   + e.g., *b* = 32-bit items in *r* = 8-bit digits &rArr; *d* = 4, *k* = 255
 + **Choose** r = *lg n*: then
   \` Theta((b/r)(n+2^r)) \`
