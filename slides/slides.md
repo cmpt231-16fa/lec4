@@ -80,8 +80,8 @@ that we may get a **heart of wisdom**.
 + But linear-time sorts not always **worth** it
 + For real-world arrays, *&Theta;(n)* and *&Theta;(n lg n)* are very similar
   + Up to *n* = \`10^6\`, *lg n &lt; 21*, a smallish factor
-  + A fast *n lg n* sort like **Quicksort** may have <br/>
-    smaller *constants* than a linear-time sort
++ For realistic *n*, a fast *n lg n* sort like **Quicksort** may have
+  smaller *constants* than a linear-time sort
   + But **recursion** is expensive (function calls)
 
 ---
@@ -211,7 +211,7 @@ def radix_sort( A, n, d ):
 + **Expected** time of bucket sort:
   \` E[T(n)] \`
   \`= E[Theta(n) + sum O(n\_i^2)] \` <br/>
-  \` = Theta(n) + O(sum E[n\_i^2]) \` <br/>
+  \` = Theta(n) + O(sum E[n\_i^2]) \` *(linearity of expectation)* <br/>
   \` = Theta(n) + O(sum (2 - 1/n)) \`&nbsp;*(by lemma)*
   \` = Theta(n) + O(2n-1)\` = *O(n)*
 
