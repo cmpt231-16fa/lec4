@@ -232,20 +232,6 @@ def radix_sort( A, n, d ):
 + **Assumptions**: input values **uniformly** distributed
 
 ---
-## Visualisations of sorting
-
-+ [The Sound of Sorting](http://panthema.net/2013/sound-of-sorting/) (YouTube [playlist](https://www.youtube.com/watch?list=PLZh3kxyHrVp_AcOanN_jpuQbcMVdXbqei))
-+ [Visualgo](http://visualgo.net): interactive demos:
-  + sorting, binary heaps, hash tables, etc.
-+ Toptal: [Comparison of sort algorithms](https://www.toptal.com/developers/sorting-algorithms)
-+ Mike Bostock's "Visualizing Algorithms":
-  + [Fisher-Yates shuffle](https://bost.ocks.org/mike/algorithms/#shuffling),
-    [sorting](https://bost.ocks.org/mike/algorithms/#sorting)
-
->>>
-TODO: screen shot
-
----
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
 ## Outline for today
 + Proving all comparison sorts are *&Omega;(n lg n)*
@@ -459,6 +445,20 @@ TODO: figure
   + Collision handling by **chaining**
   + Hash **functions** and **universal** hashing
   + Collision handling by **open addressing**
+
+---
+## Visualisations of sorting
+
++ [The Sound of Sorting](http://panthema.net/2013/sound-of-sorting/) (YouTube [playlist](https://www.youtube.com/watch?list=PLZh3kxyHrVp_AcOanN_jpuQbcMVdXbqei))
++ [Visualgo](http://visualgo.net): interactive demos:
+  + sorting, binary heaps, hash tables, etc.
++ Toptal: [Comparison of sort algorithms](https://www.toptal.com/developers/sorting-algorithms)
++ Mike Bostock's "Visualizing Algorithms":
+  + [Fisher-Yates shuffle](https://bost.ocks.org/mike/algorithms/#shuffling),
+    [sorting](https://bost.ocks.org/mike/algorithms/#sorting)
+
+>>>
+TODO: screen shot
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" class="empty" -->
