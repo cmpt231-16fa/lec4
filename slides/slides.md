@@ -318,16 +318,16 @@ def radix_sort( A, n, d ):
 + Expected num **items** searched: <br/>
   \` E[ (1/n) sum\_i (text(num items)) ] \` <br/>
   \` = E[ (1/n) sum\_i (1 + sum\_j X\_(ij)) ] \`
-  (number of collisions)
+  *(number of collisions)*
 
 ---
 ## Successful search is &Theta;(1+&alpha;)
 \` = (1/n) sum\_i (1 + sum\_j E[X\_(ij)]) \`
-(linearity of expectation) <br/>
+*(linearity of expectation)* <br/>
 \` = (1/n) sum\_i (1 + sum\_j (1/m)) \`
-(probability of collision) <br/>
+*(probability of collision)* <br/>
 \` = (1/n) sum\_i 1 + (1/nm)sum\_i sum\_j 1 \`
-(independent of *i*, *j* )<br/>
+*(independent of i, j )*<br/>
 \` = 1 + (1/(nm))((n(n-1))/2) \`
 \` = 1 + alpha/2 - alpha/(2n) \`
 
