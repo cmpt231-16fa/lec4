@@ -155,18 +155,21 @@ def radix_sort( A, n, d ):
 + e.g., using **counting** sort as the stable sort:
   + *d* iterations, each *&Theta;(n+k)*
   + So total complexity is *&Theta;(d(n+k))*
-+ **Digits** need not be base *k=10*!
++ **Digits** need not be base *k=10* !
+  + Smaller **base** *k* &rArr; more **iterations** *d*
+  + Fewer **digits** *d* &rArr; each **counting** sort *&Theta(n+k)* takes longer
 
 ---
 ## Radix: choosing digit size
 + *b*-bit items can be **split** into *r*-bit digits:
-  + Then \` d = b/r \` digits, each with \` k = 2^r-1 \` values
+  + Then \` d = b/r \` **digits**, each with \` k = 2^r-1 \` **values**
   + e.g., *b* = 32-bit items in *r* = 8-bit digits &rArr; *d* = 4, *k* = 255
 + **Choose** r = *lg n*: then
   \` Theta((b/r)(n+2^r)) \`
   \` = Theta((b/(text(lg)n))(2n)) \`
   \` = Theta((bn)/(text(lg)n)) \`
-+ e.g., to sort *n* = \`2^16\` integers of *b* = 64-bits, use *r* = 16-bit digits
++ e.g., to sort *n* = \`2^16\` integers of *b* = 64-bits:
+  + &rArr; Use *r* = 16-bit digits
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
@@ -222,7 +225,8 @@ def radix_sort( A, n, d ):
 + Number of **items** in *i*-th bucket is \`n\_i=sum\_(j=0)^(n-1) X\_(ij)\`
 + So \` E[n\_i^2] = E[ (sum\_(j=0)^(n-1) X\_(ij))^2 ] \`
   \` = sum\_(j=0)^(n-1) E[ X\_(ij)^2 ] + 2sum\_(j=0)^(n-1) sum\_(k=0)^(j-1) E[ X\_(ij)X\_(ik) ] \`
-+ In *j*-*k* matrix, consider **diagonal** and **off-diagonal** terms separately:
++ Think of these as entries in a *j*-*k* **matrix**
+  + Consider **diagonal** and **off-diagonal** terms separately:
 
 ---
 ## Lemma, continued
@@ -289,7 +293,8 @@ def radix_sort( A, n, d ):
 + `insert(T, k, x)`:
   + insert *x* at **head** of list at bucket *h(k)*
   + *O(1)* complexity; assumes *x* **not already** in list
-+ `search(T, k)`: **linear search** through bucket *h(k)*
++ `search(T, k)`:
+  + **linear search** every item in bucket *h(k)*
   + \`O(n\_(h(k)))\`, where \`n\_(h(k))\` = **num items** in bucket *h(k)*
 + `delete(T, x)`:
   + if arg is a **pointer** directly to item, then *O(1)*
