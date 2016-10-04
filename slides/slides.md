@@ -111,7 +111,8 @@ def counting_sort(A, n, k):
 ## Radix sort
 + (How **IBM** made its fortune! Punch cards, ca 1900)
 + **Assume**: values have at most *d* digits
-+ Sort one **digit** at a time, **least**-significant first (**why**?)
++ Sort one **digit** at a time, **least**-significant first
+  + or most-significant, or any order
 + Use a **stable** sort, e.g., **counting** sort (**why**?)
 
 <div class="imgbox"><div data-markdown>
@@ -171,7 +172,7 @@ def radix_sort( A, n, d ):
 ---
 ## Bucket sort
 
-+ **Assume**: values **uniformly** distributed over *[0,1)*
+**Assume**: values **uniformly** distributed over *[0,1)*
 
 <div class="imgbox"><div data-markdown style="flex: 2">
 <ul>
