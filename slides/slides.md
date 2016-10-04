@@ -210,14 +210,14 @@ def radix_sort( A, n, d ):
 + Number of **items** in *i*-th bucket is \`n\_i=sum\_(j=0)^(n-1) X\_(ij)\`
 + So \` E[n\_i^2] = E[ (sum\_(j=0)^(n-1) X\_(ij))^2 ] \`
   \` = sum\_(j=0)^(n-1) E[ X\_(ij)^2 ] + 2sum\_(j=0)^(n-1) sum\_(k=0)^(j-1) E[ X\_(ij)X\_(ik) ] \`
-+ In *j*-*k* matrix, consider **diagonal** and **off-diagonal** separately:
++ In *j*-*k* matrix, consider **diagonal** and **off-diagonal** terms separately:
 
 ---
 ## Lemma, continued
 + \` E[n\_i^2] = sum\_(j=0)^(n-1) E[ X\_(ij)^2 ] + 2sum\_(j=0)^(n-1) sum\_(k=0)^(j-1) E[ X\_(ij)X\_(ik) ] \`
-+ For **diagonal** term: \`E[X\_(ij)^2] = 0^2 P(X\_(ij)=0) + 1^2 P(X\_(ij)=1) \`
++ For **diagonal** terms: \`E[X\_(ij)^2] = 0^2 P(X\_(ij)=0) + 1^2 P(X\_(ij)=1) \`
   \` = 1^2 (1/n) = 1/n \`
-+ For **off-diagonal** term: items *j* &ne; *k* are **independent**, so
++ For **off-diagonal** terms: items *j* &ne; *k* are **independent**, so
   \` E[ X\_(ij)X\_(ik) ] = E[X\_(ij)]E[X\_(ik)] \`
   \` = (1/n)(1/n) = 1/n^2 \`
 
