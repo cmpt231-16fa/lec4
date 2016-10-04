@@ -198,8 +198,8 @@ def radix_sort( A, n, d ):
 + **Intuition**: uniform distribution &rArr; \`n\_i ~~ 1\`
 + **Expected** time of bucket sort:
   \` E[T(n)] \`
-  \`= E[Theta(n) + sum O(n\_i^2)] \`
-  \` = Theta(n) + O(sum E[n\_i^2]) \`
+  \`= E[Theta(n) + sum O(n\_i^2)] \` <br/>
+  \` = Theta(n) + O(sum E[n\_i^2]) \` <br/>
   \` = Theta(n) + O(sum (2 - 1/n)) \`&nbsp;*(by lemma)*
   \` = Theta(n) + O(2n-1)\` = *O(n)*
 
