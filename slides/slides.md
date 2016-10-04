@@ -218,8 +218,12 @@ def radix_sort( A, n, d ):
 ---
 ## Visualisations of sorting
 
->>>
-TODO
++ [The Sound of Sorting](http://panthema.net/2013/sound-of-sorting/) [(YouTube playlist)](https://www.youtube.com/watch?list=PLZh3kxyHrVp_AcOanN_jpuQbcMVdXbqei)
++ [Visualgo](http://visualgo.net): interactive demos: sorting, binary heaps, hash tables, etc.
++ Toptal: [Comparison of sort algorithms](https://www.toptal.com/developers/sorting-algorithms)
++ Mike Bostock's "Visualizing Algorithms":
+  [Fisher-Yates shuffle](https://bost.ocks.org/mike/algorithms/#shuffling),
+  [sorting](https://bost.ocks.org/mike/algorithms/#sorting)
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
