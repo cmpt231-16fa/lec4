@@ -316,7 +316,7 @@ def radix_sort( A, n, d ):
 + Use an **indicator**: \`X\_(ij)\` = 1 iff \`h(k\_i)=h(k\_j)\`
   + P(*i* and *j* collide) = \`E[X\_(ij)]\` = *1/m*
 + Expected num **items** searched: <br/>
-  \` E[ (1/n) sum\_i (text(num items)) ] \` <br/>
+  \` = E[ (1/n) sum\_i (text(num items)) ] \` <br/>
   \` = E[ (1/n) sum\_i (1 + sum\_j X\_(ij)) ] \`
   *(number of collisions)*
 
@@ -326,7 +326,7 @@ def radix_sort( A, n, d ):
 *(linearity of expectation)* <br/>
 \` = (1/n) sum\_i (1 + sum\_j (1/m)) \`
 *(probability of collision)* <br/>
-\` = (1/n) sum\_i 1 + (1/nm)sum\_i sum\_j 1 \`
+\` = (1/n) sum\_i 1 + (1/(nm))sum\_i sum\_j 1 \`
 *(independent of i, j )*<br/>
 \` = 1 + (1/(nm))((n(n-1))/2) \`
 \` = 1 + alpha/2 - alpha/(2n) \`
