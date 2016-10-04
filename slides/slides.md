@@ -348,12 +348,20 @@ TODO: screen shot
 
 ---
 ## Hash functions
-+ Assume \`U=bbb N\` (i.e., convert keys to **natural numbers**)
-  + e.g., encode **strings** using ASCII or UTF-8
++ Assume \`U=bbb N\` = *{1, 2, 3, ...}*
+  + i.e., keys can be converted to **natural numbers**
+  + e.g., strings encoded using **ASCII** or UTF-8
 + Want *h(k)* **uniformly** distributed on \`bbb Z\_m\`
   + But distribution of keys *k* is **unknown**
   + Also, keys \`k\_i\` and \`k\_j\` might not be **independent**
-+ **Division** hash: h(k) = *k mod m*
++ Various hashing **strategies**:
+  + **Division** hash
+  + **Multiplication** hash
+  + **Universal** hashing
+
+---
+## Division hash
++ h(k) = *k mod m*
   + **Fast**, but if \`m=2^p\` (i.e., a power of 2), <br/>
     this is just selecting the *p* **least-significant** bits
   + If *k* is a **string** using a radix-\`2^p\` representation,
@@ -362,7 +370,7 @@ TODO: screen shot
 
 ---
 ## Multiplication hash
-+ h(k) = \` |\_ m(kA mod 1) \_| \` (choose **constant** 0 &lt; *A* &lt; 1)
++ h(k) = floor( *m(kA mod 1)* ) (choose **constant** 0 &lt; *A* &lt; 1)
   + **Multiply** *k*&lowast;*A* &rarr; take **fractional** part
   + &rarr; **multiply** by *m* &rarr; **round** down
 + Fast **implementation** using \`m=2^p\`:
