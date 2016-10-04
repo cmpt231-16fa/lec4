@@ -56,7 +56,7 @@ that we may get a **heart of wisdom**.
 + Num **comparisons** = num **nodes** along path
 + So **worst-case** complexity = **depth** of tree:
   + = &Omega;( *lg(num leaves)* ) = &Omega;( *lg(n!)* )
-  + = &Omega;( *n lg n* ) (by **Stirling**)
+  + = &Omega;( *n lg n* ) (by **Stirling**) .
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-URmkfvtK3Qw-freeway.jpg" -->
