@@ -124,7 +124,7 @@ def counting_sort(A, n, k):
 + (How **IBM** made its fortune! Punch cards, ca 1900)
 + **Assume**: values have at most *d* digits
 + Sort one **digit** at a time, **least**-significant first
-  + or most-significant, or any order
+  + **MSD** using [recursion](https://en.wikipedia.org/wiki/Radix_sort#Recursion) (with call overhead)
 + Use a **stable** sort, e.g., **counting** sort (**why**?)
 
 <div class="imgbox"><div data-markdown>
