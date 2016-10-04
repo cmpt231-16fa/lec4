@@ -157,7 +157,7 @@ def radix_sort( A, n, d ):
   + So total complexity is *&Theta;(d(n+k))*
 + **Digits** need not be base *k=10* !
   + Smaller **base** *k* &rArr; more **iterations** *d*
-  + Fewer **digits** *d* &rArr; each **counting** sort *&Theta(n+k)* takes longer
+  + Fewer **digits** *d* &rArr; each **counting** sort *&Theta;(n+k)* takes longer
 
 ---
 ## Radix: choosing digit size
