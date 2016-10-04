@@ -362,11 +362,12 @@ TODO: screen shot
 ---
 ## Division hash
 + h(k) = *k mod m*
-  + **Fast**, but if \`m=2^p\` (i.e., a power of 2), <br/>
+  + **Simplest** function mapping \` bbb N -> bbb Z\_m \`
++ **Fast** to compute: if \`m=2^p\` (i.e., a power of 2), <br/>
     this is just selecting the *p* **least-significant** bits
-  + If *k* is a **string** using a radix-\`2^p\` representation,
-    then **permuting** the string gives **same** hash *(#11.3-3)*
-  + Try *m* **prime** and not too close to a power of 2
++ But: if *k* is a **string** using a radix-\`2^p\` representation,
+  then **permuting** the string gives **same** hash *(#11.3-3)*
++ So try *m* **prime** and not too close to a power of 2
 
 ---
 ## Multiplication hash
