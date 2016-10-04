@@ -73,17 +73,29 @@ that we may get a **heart of wisdom**.
 
 ---
 ## Linear-time sorts
-+ Use **assumptions** on input: e.g., known *range*
-  + or known *distribution* of values
++ Ways to **beat** the *&Theta;(n lg n)* barrier
++ By using **assumptions** on input:
+  + e.g., known *range* or *distribution* of values
+  + e.g., **numeric** values we can perform **arithmetic** on
++ But linear-time sorts not always **worth** it
 + For real-world arrays, *&Theta;(n)* and *&Theta;(n lg n)* are very similar
   + Up to *n* = \`10^6\`, *lg n &lt; 21*, a smallish factor
   + A fast *n lg n* sort like **Quicksort** may have <br/>
     smaller *constants* than a linear-time sort
-+ **Hybrid** algorithms (e.g., *#7.4-5*):
+  + But **recursion** is expensive (function calls)
+
+---
+## Hybrid algorithms
++ *(#7.4-5)* : QuickSort + Insertion sort
   + One pass with **Quicksort**, stop when length &lt; *c*
   + Second pass with **insertion** sort
-    + Few shuffles when input is "nearly sorted"
-+ **Recursion** is expensive (function calls)
+    + Items shift at most *c* positions over
++ [TimSort](http://www.infopulse.com/blog/timsort-sorting-algorithm/): Merge sort + Insertion sort
+  + Default in **Python**, Java (&lt;7), Android, etc
+  + Take advantage of monotone **runs** in real data
+  + Use **run stack** to track merges
+  + Merge with minimal extra **memory** or **copying**
+  + **Stable**, best-case *O(n)*, worst *O(n lg n)*
 
 ---
 ## Counting sort
