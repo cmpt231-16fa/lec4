@@ -177,7 +177,7 @@ def radix_sort( A, n, d ):
 <div class="imgbox"><div data-markdown style="flex: 2">
 <ul>
 <li> Divide *[0,1)* into *n* equal **buckets** <ul>
-  <li> Use **array** or **linked list** </ul>
+  <li> Can use **array**, or **linked list**, etc. </ul>
 <li> **Distribute** input into buckets: *&Theta;(n)*
 <li> **Sort** each bucket (e.g., **insertion** sort)
 <li> **Pull** from buckets in order: *&Theta;(n)*
