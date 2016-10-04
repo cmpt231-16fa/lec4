@@ -93,7 +93,7 @@ that we may get a **heart of wisdom**.
 + [TimSort](http://www.infopulse.com/blog/timsort-sorting-algorithm/): Merge sort + Insertion sort
   + Default in **Python**, Java (&lt;7), Android, etc
   + Take advantage of monotone **runs** in real data
-  + Use **run stack** to track merges
+  + Use **run stack** to track merges and exploit **cache locality**
   + Merge with minimal extra **memory** or **copying**
   + **Stable**, best-case *O(n)*, worst *O(n lg n)*
 
